@@ -268,7 +268,8 @@ module Stytch
         expiration_minutes: nil,
         attributes: nil,
         create_user_as_pending: nil,
-        locale: nil
+        locale: nil,
+        autofill: nil
       )
         headers = {}
         request = {
@@ -278,6 +279,7 @@ module Stytch
         request[:attributes] = attributes unless attributes.nil?
         request[:create_user_as_pending] = create_user_as_pending unless create_user_as_pending.nil?
         request[:locale] = locale unless locale.nil?
+        request[:autofill] = autofill unless autofill.nil?
 
         post_request('/v1/otps/sms/login_or_create', request, headers)
       end
@@ -427,7 +429,8 @@ module Stytch
         expiration_minutes: nil,
         attributes: nil,
         create_user_as_pending: nil,
-        locale: nil
+        locale: nil,
+        autofill: nil
       )
         headers = {}
         request = {
@@ -437,7 +440,7 @@ module Stytch
         request[:attributes] = attributes unless attributes.nil?
         request[:create_user_as_pending] = create_user_as_pending unless create_user_as_pending.nil?
         request[:locale] = locale unless locale.nil?
-
+        request[:autofill] = autofill unless autofill.nil?
         post_request('/v1/otps/whatsapp/login_or_create', request, headers)
       end
     end
